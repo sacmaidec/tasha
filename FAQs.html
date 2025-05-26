@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQs - Sweet Delights</title>
+ <link rel="stylesheet" href="../style.css/FAQs.css">
+</head>
+<body>
+
+<header>
+  <h1>Sweet Delights</h1>
+  <nav>
+     <a href="index.html">Our Cakes</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="services.html">Services</a>
+    <a href="news.html">News</a>
+    <a href="FAQs.html">FAQs</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Frequently Asked Questions</h2>
+
+  <section class="faq-item" tabindex="0" aria-expanded="false" aria-controls="faq1_answer" role="button">
+    <div class="faq-question" id="faq1">
+      What flavors of cakes do you offer?
+    </div>
+    <div class="faq-answer" id="faq1_answer" aria-labelledby="faq1" hidden>
+      We offer a wide variety of flavors including vanilla, chocolate, red velvet, carrot, lemon drizzle, and seasonal fruit flavors. Custom flavors are also available upon request.
+    </div>
+  </section>
+
+  <section class="faq-item" tabindex="0" aria-expanded="false" aria-controls="faq2_answer" role="button">
+    <div class="faq-question" id="faq2">
+      How far in advance should I place my order?
+    </div>
+    <div class="faq-answer" id="faq2_answer" aria-labelledby="faq2" hidden>
+      We recommend placing your order at least 5-7 days in advance to ensure availability and customization options, especially for large or custom cakes.
+    </div>
+  </section>
+
+  <section class="faq-item" tabindex="0" aria-expanded="false" aria-controls="faq3_answer" role="button">
+    <div class="faq-question" id="faq3">
+      Do you offer delivery services?
+    </div>
+    <div class="faq-answer" id="faq3_answer" aria-labelledby="faq3" hidden>
+      Yes, we offer delivery within our service area. Delivery fees may apply depending on the distance. Please contact us for details and scheduling.
+    </div>
+  </section>
+
+  <section class="faq-item" tabindex="0" aria-expanded="false" aria-controls="faq4_answer" role="button">
+    <div class="faq-question" id="faq4">
+      Can I customize the designs for my cake?
+    </div>
+    <div class="faq-answer" id="faq4_answer" aria-labelledby="faq4" hidden>
+      Absolutely! We specialize in custom cake designs to match your theme and preferences. Simply let us know your ideas and we will work with you to create a beautiful cake.
+    </div>
+  </section>
+
+  <section class="faq-item" tabindex="0" aria-expanded="false" aria-controls="faq5_answer" role="button">
+    <div class="faq-question" id="faq5">
+      What payment methods do you accept?
+    </div>
+    <div class="faq-answer" id="faq5_answer" aria-labelledby="faq5" hidden>
+      We accept cash, credit/debit cards, and online payments for your convenience.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2024 Sweet Delights. All rights reserved.
+</footer>
+
+<script>
+  // Enable toggling FAQ items with keyboard and mouse
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    // Set ARIA attributes initially
+    item.setAttribute('aria-expanded', 'false');
+    answer.hidden = true;
+
+    function toggleFaq() {
+      const isOpen = item.classList.toggle('open');
+      item.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      answer.hidden = !isOpen;
+    }
+
+    item.addEventListener('click', toggleFaq);
+
+    item.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleFaq();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
